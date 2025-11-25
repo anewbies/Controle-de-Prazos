@@ -1,0 +1,5 @@
+{
+  "name": "Controle de Prazos",
+  "description": "Uma aplicação web para controle de prazos, onde o usuário registra um assunto, um destinatário e uma data limite. Os prazos podem ser definidos em dias corridos ou uma data específica, com alertas visuais para prazos que estão vencendo.",
+  "requestFramePermissions": []
+}
