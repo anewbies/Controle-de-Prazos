@@ -6,6 +6,7 @@ import { Deadline, DeadlineStatus } from './models/deadline.model';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
   standalone: true,
   imports: [CommonModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
