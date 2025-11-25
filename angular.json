@@ -1,26 +1,46 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "",
+  "newProjectRoot": "projects",
   "projects": {
-    "app": {
+    "controle-de-prazos": {
       "projectType": "application",
+      "schematics": {},
       "root": "",
-      "sourceRoot": "./",
+      "sourceRoot": "src",
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular/build:application",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": {
-              "base": "./dist",
-              "browser": "."
-            },
-            "browser": "index.tsx",
-            "tsConfig": "tsconfig.json"
+            "outputPath": "dist/controle-de-prazos",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "polyfills": [],
+            "tsConfig": "tsconfig.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": []
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
               "outputHashing": "all"
             },
             "development": {
@@ -32,16 +52,13 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular/build:dev-server",
-          "options": {
-            "port": 3000
-          },
+          "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "app:build:production"
+              "buildTarget": "controle-de-prazos:build:production"
             },
             "development": {
-              "buildTarget": "app:build:development"
+              "buildTarget": "controle-de-prazos:build:development"
             }
           },
           "defaultConfiguration": "development"
